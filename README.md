@@ -30,13 +30,6 @@ change CSE_ID and CSE key in the results.php to yours.
 Enjoy...
 ```
     
-## Update 2025/4/2
-
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
 
 ## Roadmap
 
