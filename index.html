@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOZEER.COM 搜这儿，啥都有</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f1f1f1;
+        }
+        .search-container {
+            text-align: center;
+        }
+        #logo {
+            width: 272px;
+            margin-bottom: 20px;
+        }
+        #search-box {
+            width: 584px;
+            height: 44px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #search-button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <img src="logo.png" alt="Logo" id="logo">
+        <form action="results.php" method="get">
+            <input type="text" name="q" id="search-box">
+            <br>
+            <button type="submit" id="search-button">Google Search</button>
+        </form>
+    </div>
+</body>
+</html>
