@@ -1,54 +1,140 @@
 <!DOCTYPE html>
-<html>
-    <html lang="zh-CN"> <!-- 新增语言声明 -->
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8"> <!-- 必须添加的字符编码声明 -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZEER.COM 搜这儿，啥都有</title>
+    <title>SOZEER.COM 搜这儿啥都有 - 新一代搜索引擎</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #f8f9fa;
+        }
+
+        * {
             margin: 0;
-            background: #f1f1f1;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .search-container {
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            background: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* LOGO样式 */
+        .logo-img {
+            width: 220px;
+            height: auto;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        /* 搜索框区域 */
+        .search-header {
+            padding: 80px 0 40px;
             text-align: center;
+            flex: 1;
         }
-        #logo {
-            width: 272px;
-            margin-bottom: 20px;
+
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 650px;
+            margin: 0 auto;
         }
-        #search-box {
-            width: 584px;
-            height: 44px;
+
+        .search-input {
+            width: 100%;
+            padding: 16px 30px;
             border: 1px solid #dfe1e5;
-            border-radius: 24px;
-            padding: 0 20px;
+            border-radius: 30px;
             font-size: 16px;
-            margin-bottom: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        #search-button {
-            background: #4285f4;
-            color: white;
+
+        .search-btn {
+            width: 160px;
+            padding: 15px 35px;
+            margin: 0 auto;
+            background: var(--primary-color);
             border: none;
-            padding: 12px 24px;
-            border-radius: 24px;
+            border-radius: 30px;
+            color: white;
             cursor: pointer;
-            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        /* 广告位样式 */
+        .ad-container {
+            max-width: 80%;
+            margin: 25px auto;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        /* 响应式页脚 */
+        .site-footer {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        @media (min-width: 768px) {
+            .site-footer {
+                display: block;
+                margin-top: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="search-container">
-        <img src="logo.png" alt="Logo" id="logo">
-        <form action="results.php" method="get">
-            <input type="text" name="q" id="search-box">
-            <br>
-            <button type="submit" id="search-button">搜这儿</button>
-        </form>
-    </div>
+    <header class="search-header">
+        <div class="container">
+            <img src="logo.png" alt="智能搜索" class="logo-img">
+            
+            <form action="search.php" method="GET" class="search-box">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="search-input"
+                    placeholder="输入关键词搜索网页、图片、新闻..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="search-btn">立即搜索</button>
+            </form>
+
+            <div class="ad-container">
+                <img src="ad-banner.png" alt="合作伙伴广告" style="width:100%;border-radius:4px;">
+            </div>
+
+            <div class="features">
+                支持智能建议 · 多模态搜索 · 安全加密连接
+            </div>
+        </div>
+    </header>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2015-<?= date('Y') ?> 智能搜索 京ICP备XXXXXXXX号</p>
+            <p style="margin-top:8px;">致力于提供安全可靠的搜索服务</p>
+        </div>
+    </footer>
 </body>
 </html>
