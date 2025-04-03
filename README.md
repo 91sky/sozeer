@@ -33,14 +33,18 @@ Enjoy...
 
 ## Roadmap
 
+- 2025/4/3 Improvements:
+  --major improvements for both desktop and mobile template(merged)
+  --Security improvements
+  --performance improvements
 - 2025/4/2 basic function: site templates and search function
 
 ## To be done
 
-- results templates optimization
+- results templates optimization(2025/4/3)
 - cache function to improve performance
-- security enhancement
-- mobile optimization
+- security enhancement(ongoing)
+- mobile optimization（ongoing)
 - category choice(web,image,video,file,etc)
 - multi-language
 - dark mode
